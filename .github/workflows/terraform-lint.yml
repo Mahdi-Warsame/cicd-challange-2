@@ -1,0 +1,36 @@
+name: Terraform Lint
+
+on:
+    push:
+        paths:
+          - "**/*.tf"
+          - "**/*.tfvars"
+          - ".github/workflows/terraform-lint.yml"
+    pull_request:
+        paths:
+          - "**/*.tf"
+          - "**/*.tfvars"
+          - ".github/workflows/terraform-lint.yml"
+    workflow_dispatch:
+jobs:
+    terraform-check:
+        name: Terraform Format and Validate
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout repository
+            uses: actions/checkout@v3
+        
+          - name: Setup terraform
+            uses: hashicorp/setup-terraform@v3
+            with:
+                terraform_version: "1.9.8"
+            
+          - name: Check terraform formatting
+            run: terraform fmt -check -recursive
+        
+          - name: Initialize terraform
+            run: terraform init -backend=false
+        
+          - name: Validate Terraform
+            run: terraform validate
