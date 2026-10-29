@@ -9,7 +9,7 @@ variable "environment" {
 }
 
 locals {
-  app_name="hello-app"
+  app_name = "hello-app"
 }
 
 output "application_name" {
