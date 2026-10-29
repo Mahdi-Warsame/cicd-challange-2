@@ -82,12 +82,3 @@ terraform fmt -recursive
 
 This project focuses on CI checks. It does not deploy infrastructure or create cloud resources.
 
-👨‍💻 DevOps Learning Journey
-
-Part of my hands-on DevOps challenges, focused on learning CI/CD automation and Infrastructure as Code.
-
-Build • Learn • Automate 🚀
-
-Before committing: Make sure the directory and filenames in the README match your actual repository structure.
-
-Save this content as README.md in the repository root, then commit and push it to GitHub.
